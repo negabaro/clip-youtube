@@ -3,14 +3,16 @@
     <div id="nav">
       <h1>xxxxxxxxxxxx</h1>
       <div id="player" />
-      <youtube
-        :video-id="videoId"
-        :player-vars="playerVars"
-        @ready="ready"
-        @ended="ended"
-        @error="error"
-        ref="youtube"
-      />
+      <div v-if="isParams">
+        <youtube
+          :video-id="videoId"
+          :player-vars="playerVars"
+          @ready="ready"
+          @ended="ended"
+          @error="error"
+          ref="youtube"
+        />
+      </div>
       <!-- <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> -->
     </div>
@@ -20,6 +22,8 @@
 <script lang="ts">
 import Vue from "vue";
 import VueYoutube from "vue-youtube";
+import { toHHMMSS, toSecond } from "@/util/index";
+
 //let YouTubeIframeLoader = require("youtube-iframe");
 //const VueYoutube = require("vue-youtube");
 Vue.use(VueYoutube);
@@ -47,14 +51,17 @@ export default Vue.extend({
 
     this.videoId = params[1];
     console.log("this.videoId", this.videoId);
-    this.start = Number(params[2]);
-    this.end = Number(params[3]);
+    this.start = toSecond(params[2]);
+    this.end = toSecond(params[3]);
 
     //this.loadVideoById();
 
     //console.log(location.pathname.split("/"));
   },
   computed: {
+    isParams(): boolean {
+      return !!this.videoId && !!this.start && !!this.end;
+    },
     //player() {
     //  YouTubeIframeLoader.load((YT: any) => {
     //    const player = new YT.Player("player", {
