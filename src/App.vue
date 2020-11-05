@@ -74,8 +74,8 @@ export default Vue.extend({
       // ...
       // Facebook / Open Graph
       { property: "fb:app_id", content: "123456789" },
-      { property: "og:title", content: "Content Title" },
-      { property: "og:description", content: "xxxxxxxxxxxxx" },
+      { property: "og:title", content: "Content 22333" },
+      { property: "og:description", content: "yyyyyyyyy" },
       // with shorthand
       {
         p: "og:image",
