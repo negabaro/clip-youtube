@@ -73,14 +73,19 @@ export default Vue.extend({
       { itemprop: "description", content: "Content Title" },
       // ...
       // Facebook / Open Graph
-      { property: "fb:app_id", content: "123456789" },
+      //{ property: "fb:app_id", content: "123456789" },
       { property: "og:title", content: "Content 22333" },
       { property: "og:description", content: "yyyyyyyyy" },
+      //{ property: "og:type", content: "website" },
+      //{ property: "og:url", content: "https://media3.giphy.com/media/fBEDuhnVCiP16/giphy.gif" },
       // with shorthand
       {
         p: "og:image",
-        c: "https://cdn.jpegmini.com/user/images/slider_puffin_jpegmini.jpg"
-      }
+        c: "https://media3.giphy.com/media/fBEDuhnVCiP16/giphy.gif"
+      },
+      { property: "og:image:type", content: "image/gif" },
+      { property: "og:image:width", content: "500" },
+      { property: "og:image:height", content: "376" }
       // ...
     ]
   },
