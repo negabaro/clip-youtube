@@ -1,6 +1,6 @@
 module.exports = {
   publicPath: "/clip-youtube/",
-  outputDir: "dist"
+  outputDir: "docs"
 };
 
 //const path = require("path");
