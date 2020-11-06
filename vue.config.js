@@ -1,7 +1,8 @@
-module.exports = {
-  publicPath: "/clip-youtube/",
-  outputDir: "docs"
-};
+//module.exports = {
+//  publicPath: "/clip-youtube/",
+//  outputDir: "dist"
+//};
+
 //const path = require("path");
 //module.exports = {
 //  outputDir: path.resolve(__dirname)
